@@ -1,9 +1,11 @@
 Section		Grade
 ========================== 
 Part A		0.00/5.00
-Part B		 PND/5.00
+Part B		0.00/5.00
 ==========================
 Total		0.00/5.00 
 
 Comment:
-+ Part a is missing.
++ Part A is missing.
+
++ Part B is missing.
