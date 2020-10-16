@@ -1,0 +1,4 @@
+01 int G(int a,int b)
+06 }
+12 cout << "Enter two numbers: ";
+17 r = G(t,s);
