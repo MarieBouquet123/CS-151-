@@ -1,8 +1,11 @@
 Section		Grade
 ========================== 
 Part A		2.00/2.00
-Part B		 PND/3.00
+Part B		2.85/3.00
 ==========================
-Total		2.00/5.00	-0.25 
+Total		4.85/5.00	-0.25 
 
 Comment:
++ Part B, function 1 is not completely
+accurate.
+
