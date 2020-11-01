@@ -1,0 +1,89 @@
+Resources:
+//It contains the essential 
+components of the game
++ struct Game
+{
+	//the board
+	string bd;
+	//the current player
+	int cp;
+	//the tokens
+	char tkn[2];
+	//the pairs
+	Pair ps;
+	//moves counter
+	int mvs; 
+};
+
+//Random Pair structure
++ struct Pair
+{
+	//first index
+	int p;
+	//second index
+	int q;
+	//execution flag
+	bool performed;
+};
+
+Functions:
+//Initializes a Game object
++ void Initialize(Game&);
+
+//Displays the board as a grid and states who is the current player
++ void Display(const Game&);
+
+//Determines if there is a win horizontally
++ bool HasHorizontalWin(const Game&);
+
+//Determines if there is a win vertically
++ bool HasVerticalWin(const Game&);
+
+//Determines if there is a win diagonally 
++ bool HasDiagonalWin(const Game&);
+
+//Determines if there is a win
++ bool HasWin(const Game&);
+
+//Determines if there are available moves
++ bool HasMove(const Game&);
+
+//Determines if the game can continue
++ bool CanPlay(const Game&);
+
+//Determines if a cell is available
++ bool Available(const Game&,int,int);
+
+//Determines if coordinates are valid
++ bool ValidCoors(const Game&,int,int);
+
+//Gets valid coordinates from the user
++ void GetCoordinates(const Game&,int&,int&);
+
+//Determines and performs swap of target cells
++ bool IsTriggered(Game&);
+
+//Modifies the board
++ void MakeMove(Game&);
+
+//Switches the current player
++ void SwitchPlayer(Game&);
+
+//Shows the outcome of the game
++ void Result(Game&);
+
+//Plays the game
++ void PlayGame(); 
+
+Libraries:
+//For cout and cin
++ iostream 
+
+//For time
++ ctime
+
+//For srand() and rand() 
++ cstdlib
+
+//For string
++ string

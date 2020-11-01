@@ -1,0 +1,18 @@
+Section		Grade
+============================ 
+Project A	14.80/20.00
+============================
+Total		14.80/20.00 
+
+Comment:
++ Program used prohibited code.
+
++ There were errors in every function,
+but the subtraction() functions.
+
++ The dotproduct() function is inaccurate.
+
++ The format of the display does not
+follow the requirements.
+
++ The program does not compile. 

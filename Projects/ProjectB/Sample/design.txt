@@ -1,0 +1,112 @@
+PlayGame()
+01. Initialize(g)
+02. while true
+	01. Display(g)
+	02. MakeMove(g)
+	03. if !CanPlay(g)
+		01. Display(g)
+		02. break
+	04. SwitchPlayer(g)
+03. Result(g)
+
+Result(g)
+01. m = HasMove(g)
+02. w = HasWin(g)
+03. if !m && !w
+	01. write("Draw")
+04. elif w
+	01. write("Player ",g.cp+1," won")
+
+SwitchPlayer(g)
+01. g.cp = (g.cp + 1) % 2
+
+MakeMove(g)
+01. GetCoordinates(g,x,y)
+02. x -= 1
+03. y -= 1
+04. g.bd[3*x+y] = g.tkn[g.cp]
+05. IsTriggered(g)
+06. g.mvs += 1
+
+IsTriggered(g)
+01. if !g.ps.performed
+	01. if g.bd[g.ps.p] != '*' && g.bd[g.ps.q] != '*'
+		01. t = g.bd[g.ps.p]
+		02. g.bd[g.ps.p] = g.bd[g.ps.q]
+		03. g.bd[g.ps.q] = t;
+		04. g.ps.performed = true
+
+GetCoordinates(g,x,y)
+01. while true
+	01. write("Enter row (1 - 3):")
+	02. read(x)
+	03. write("Enter column (1 - 3):")
+	04. read(y)
+	05. if ValidCoors(g,x,y)
+		01. break
+
+ValidCoors(g,x,y)
+01. if x >= 1 && x <= 3 && y >= 1 && y <= 3
+	01. x -= 1
+	02. y -= 1
+	03. return Available(g,x,y)
+02. return false
+
+Available(g,x,y)
+01. return g.bd[3*x+y] == '*'
+
+CanPlay(g)
+01. return HasMove(g) && !HasWin(g)
+
+HasMove(g)
+01. return g.mvs < 9
+
+HasWin(g)
+01. return HasHorizontalWin(g) || HasVerticalWin(g) || HasDiagonalWin(g)
+
+HasDiagonalWin(g)
+01. d1 = g.bd[0] == g.bd[4] && g.bd[0] == g.bd[8] && g.bd[0] != '*'
+02. d2 = g.bd[2] == g.bd[4] && g.bd[2] == g.bd[6] && g.bd[2] != '*'
+03. return d1 || d2
+
+HasVerticalWin(g)
+01. i = 0
+02. while i < 3
+	01. if g.bd[i] == g.bd[3+i] && g.bd[i] == g.bd[6+i] && g[i] != '*'
+		01. return true
+	02. i += 1
+03. return false
+
+HasHorizontalWin(g)
+01. i = 0
+02. while i < 3
+	01. if g.bd[3*i] == g.bd[3*i+1] && g.bd[3*i] == g.bd[3*i+2] && g.bd[3*i] != '*'
+		01. return true
+	02. i += 1
+03. return false
+
+Display(g)
+01. i = 0
+02. write("Current Player: ",g.cp + 1)
+03. while i < 9
+	01. if g.bd[i] == '*'
+		01. write(" ")
+	02. else
+		01. write(g.bd[i])
+	03. if (i + 1) % 3 == 0
+		01. write("\n")
+		02. if i != 8
+			01. write("=========")
+	04. else
+		01. write("|")
+	05. i += 1
+
+Initialization(g)
+01. g.tkn[0] = 'X'
+02. g.tkn[1] = 'O'
+03. g.cp = 0
+04. g.bd = "*********"
+05. g.mvs = 0
+06. g.ps.performed = false
+08. g.ps.p = random(0,8)
+09. g.ps.q = (g.ps.p + random(0,8)) % 9 

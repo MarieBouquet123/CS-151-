@@ -1,0 +1,10 @@
+Game: Tic-Tac-Toe
+
+	The game Tic-Tac-Toe is a two player game that starts by assigning each player a
+token (X or O). Afterwards, each player alternate turns drawing their token on a 3x3 grid 
+in any available cell. The first player to get three of their tokens in a row either 
+horizontally, vertically or diagonally wins. However, if the grid is filled before any 
+player can get three in a row, the game ends in a draw. 
+	For my version of Tic-Tac-Toe, I am adding a feature that will be swap the values 
+of random cell pairs when they are filled. There will be either one or two pairs.
+
