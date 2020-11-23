@@ -82,7 +82,7 @@ Let 	L1 = b < a
 /*****************************************************************
 * Section IV
 ******************************************************************
-Errors:
+Corrections:
 04 using namespace std;
 10 a[i] = v;
 18 int swapmid(int a[],int i,int j)

@@ -1,0 +1,24 @@
+Section		Grade
+============================ 
+Section I	  3.80/5.00
+Section II	  4.00/5.00
+Section III	  3.30/5.00
+Section IV	  2.25/5.00
+============================
+Total		13.35/20.00 
+
+Comment:
++ Section I, problems a, b and e have errors.
+
++ Section I, problem c is partially inaccurate.
+
++ Section II, the function has several syntax errors.
+
++ Section III, the header of the table is missing columns.
+
++ Section III, the table has inaccurate steps.
+
++ Section IV, the list is missing errors.
+
++ Section IV, the list is correcting valid lines.
+
